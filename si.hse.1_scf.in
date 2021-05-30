@@ -1,0 +1,26 @@
+&control
+    calculation = 'scf'
+    prefix = 'si'
+    restart_mode = 'from_scratch'
+    outdir = './outdir'
+    pseudo_dir = '/home/maestro/Downloads/SSSP_efficiency_pseudos'
+/
+&system
+    ibrav=2, celldm(1)=10.410909236,
+    nat=2, ntyp=1, nbnd=8,
+    ecutwfc=40
+    input_dft='hse', nqx1=1, nqx2=1, nqx3=1,
+    x_gamma_extrapolation=.TRUE.
+    exxdiv_treatment='gygi-baldereschi'
+/
+&electrons
+    conv_thr = 1e-8
+/
+ATOMIC_SPECIES
+ Si 28.0855 Si.pbe-n-rrkjus_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS (alat)
+ Si 0.00 0.00 0.00
+ Si 0.25 0.25 0.25
+K_POINTS (automatic)
+ 8 8 8 0 0 0
